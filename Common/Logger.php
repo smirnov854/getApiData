@@ -4,7 +4,7 @@ class Logger extends Database_worker
 {
     public static $table = "parsing_logger";
 
-    static public  function add_log_row($table,$source,$class_name){
+    static public function add_log_row($table,$source,$class_name){
         $insert_array =[
             "date"=>date("d.m.Y H:i:s"),
             "insert_table"=>$table,

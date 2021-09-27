@@ -1,5 +1,5 @@
 <?php
-
+set_time_limit(600);
 require_once "Common/Database_worker.php";
 require_once "Common/Logger.php";
 require_once "Tyres/Tyres.php";
