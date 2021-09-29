@@ -2,9 +2,14 @@
 
 class VianorWheels extends Wheels
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->add_log_row(__CLASS__);
+    }
     public function get_data(){
         $disk  = "https://b2b.vianor-tyres.ru/online/catalog/products.xml?token=fe4e503cabac580d6af478952639c4e9&tire=false&wheel=true&truck-tire=false&truck-wheel=false";
-        file_put_contents("/home/c/cf08116/public_html/downloader/vianor/wheels.xml",file_get_contents($disk));
+        file_put_contents("/home/c/cf08116/public_html/downloader/data/vianor/wheels.xml",file_get_contents($disk));
     }
 
     public function read_from_xml() {

@@ -2,9 +2,14 @@
 
 class TreckTyreTyres extends Tyres
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->add_log_row(__CLASS__);
+    }
     public function get_data() {
         $tyres = "https://www.trektyre.ru/load-price-xml?url=4a4a95e0811629011631bcf0e3add5d8&oplata=0";
-        file_put_contents("/home/c/cf08116/public_html/downloader/trektyre/tyres.xml",file_get_contents($tyres));
+        file_put_contents("/home/c/cf08116/public_html/downloader/data/trektyre/tyres.xml",file_get_contents($tyres));
     }
 
     public function read_from_xml() {

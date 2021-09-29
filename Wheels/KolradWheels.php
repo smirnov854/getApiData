@@ -3,8 +3,12 @@
 
 class KolradWheels extends Wheels
 {
-
-    public $path = "/home/c/cf08116/public_html/downloader/kolrad/";
+    public function __construct()
+    {
+        parent::__construct();
+        $this->add_log_row(__CLASS__);
+    }
+    public $path = "/home/c/cf08116/public_html/downloader/data/kolrad/";
 
     public function get_from_api()
     {

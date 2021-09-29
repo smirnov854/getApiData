@@ -2,6 +2,11 @@
 
 class OptKolesaDaromTyres extends Tyres
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->add_log_row(__CLASS__);
+    }
     public function read_from_json()
     {
         $file_handle = fopen($this->file_name, "r");

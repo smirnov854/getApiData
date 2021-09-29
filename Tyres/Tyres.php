@@ -2,6 +2,8 @@
 
 abstract class Tyres extends Database_worker
 {
+
+
     private $table_name = "parsing_tyres";
     
     public $database_fields = [

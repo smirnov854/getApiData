@@ -3,6 +3,9 @@
 
 abstract class Wheels extends Database_worker
 {
+
+
+
     private $table_name = "parsing_wheel";
 
     public $database_fields = [

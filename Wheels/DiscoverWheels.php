@@ -2,6 +2,17 @@
 
 class DiscoverWheels extends Wheels
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->add_log_row(__CLASS__);
+    }
+
+    public function get_data() {
+        $tyres = 'https://discovery.moscow/xmlprice/contract/181/?token=$1$VP7fCNIN$RGUvbfGC/4OcNdWkDUq4K1';
+        file_put_contents("/home/c/cf08116/public_html/downloader/data/discovery/tyres.xml",file_get_contents($tyres));
+    }
+
     public function read_from_xml() {
         $xml = simplexml_load_file($this->file_name);
         foreach ($xml->disks->disk as $wheel) {

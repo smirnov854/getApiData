@@ -2,9 +2,16 @@
 
 class OptWspitality extends Wheels
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->add_log_row(__CLASS__);
+    }
+
     public function get_data() {
         $tyres = "https://wspitaly.ru/1c_price/stock_list_wspitaly.xls";
-        file_put_contents("/home/c/cf08116/public_html/downloader/opt_wspitaly/tyres.xls",file_get_contents($tyres));
+        file_put_contents("/home/c/cf08116/public_html/downloader/data/opt_wspitaly/tyres.xls",file_get_contents($tyres));
     }
 
     public function read_from_xls(){

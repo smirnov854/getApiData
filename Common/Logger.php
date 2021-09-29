@@ -2,16 +2,12 @@
 
 class Logger extends Database_worker
 {
-    public static $table = "parsing_logger";
+    public $table = "";
 
-    static public function add_log_row($table,$source,$class_name){
+    public function add_log_row($source){
         $insert_array =[
-            "date"=>date("d.m.Y H:i:s"),
-            "insert_table"=>$table,
-            "pseudo_name"=>$source,
-            "class"=>$class_name,
+            "source"=>$source,
         ];
-        var_dump($insert_array);
-        self::insert(self::$table,$insert_array);
+        $this->insert($this->table,$insert_array);
     }
 }

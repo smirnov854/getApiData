@@ -2,8 +2,14 @@
 
 class DuploWheels extends Wheels
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->add_log_row(__CLASS__);
+    }
+
     public function get_data() {
-        file_put_contents("/home/c/cf08116/public_html/downloader/duplo/duplo_wheels.csv",file_get_contents('https://duplo.shinservice.ru/xml/shinservice-b2b-wheels.csv?id=88964843&t=1632167785298'));
+        file_put_contents("/home/c/cf08116/public_html/downloader/data/duplo/duplo_wheels.csv",file_get_contents('https://duplo.shinservice.ru/xml/shinservice-b2b-wheels.csv?id=88964843&t=1632167785298'));
     }
 
     public function read_from_csv(){

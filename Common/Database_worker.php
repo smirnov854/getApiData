@@ -128,5 +128,11 @@ class Database_worker
         }
         return $result;
     }
+
+    public function add_log_row($source){
+        $sql = "SELECT id FROM parsing_source_list WHERE source LIKE '$source'";
+        $res = $this->do_sql($sql);
+        $this->insert("parsing_logger",["source"=>$source,"source_id"=>$res[0]->id]);
+    }
     
 }
